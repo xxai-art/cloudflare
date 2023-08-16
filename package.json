@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@w5/coffee_plus": "^0.0.13",
+    "@w5/jsext": "^0.0.1",
+    "@w5/loader": "^0.0.3",
+    "@w5/mdt": "^0.0.16",
+    "zx": "^7.2.3"
+  }
+}
