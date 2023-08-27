@@ -23,6 +23,7 @@ main = =>
       settings.browser_check OFF
       settings.security_level 'essentially_off'
       settings.challenge_ttl 31536000
+      settings.ssl 'strict'
     ]
 
   return
