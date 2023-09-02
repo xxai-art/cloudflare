@@ -7,6 +7,8 @@ export default new Proxy(
   get:(_, method)=>
     (url, body)=>
       api_url = "https://api.cloudflare.com/client/v4/zones"
+      if Array.isArray url
+        url = url.join '/'
       if url
         if url.charAt(0) != '?'
           url = '/'+url
