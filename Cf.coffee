@@ -8,7 +8,9 @@ export default new Proxy(
     (url, body)=>
       api_url = "https://api.cloudflare.com/client/v4/zones"
       if url
-        api_url += ('/'+url)
+        if url.charAt(0) != '?'
+          url = '/'+url
+        api_url += url
       data = {
         method
         headers: {
