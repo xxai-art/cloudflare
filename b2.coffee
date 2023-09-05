@@ -83,7 +83,7 @@ await Promise.all [
       action_parameters:
         uri:
           path:
-            expression: 'concat("/file/'+bucket+", http.request.uri.path)'
+            expression: 'concat("/file/'+bucket+', http.request.uri.path)'
       description: 'b2'
       expression: 'true'
       enabled: true
