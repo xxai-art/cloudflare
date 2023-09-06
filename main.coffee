@@ -1,10 +1,10 @@
 #!/usr/bin/env coffee
 
-> ./Cf
-  ./Zone
+> @w5/cf
+  @w5/cf/Zone
 
 main = =>
-  for i from await Cf.GET()
+  for i from await cf.GET()
     {name, id} = i
     console.log name
     {
