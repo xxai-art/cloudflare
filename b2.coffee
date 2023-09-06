@@ -1,7 +1,7 @@
 #!/usr/bin/env coffee
 
-> ./Cf
-  ./Zone
+> @w5/cf
+  @w5/cf/Zone
 
 [
   host
@@ -13,10 +13,10 @@ backblazeb2 = prefix + '.backblazeb2.com'
 
 console.log '\n'+host, '→', 'https://'+backblazeb2+'/'+bucket+'/'
 
-[{id}] = await Cf.GET('?name='+host)
+[{id}] = await cf.GET('?name='+host)
 
 await Promise.all [
-  Cf.PUT(
+  cf.PUT(
     [
       id
       'rulesets/phases/http_response_headers_transform/entrypoint'
@@ -55,7 +55,7 @@ await Promise.all [
       enabled: true
     ]
   )
-  Cf.POST(
+  cf.POST(
     [
       id
       'dns_records'
@@ -72,7 +72,7 @@ await Promise.all [
     comment: ''
     tags: []
   )
-  Cf.PUT(
+  cf.PUT(
     [
       id
       'rulesets/phases/http_request_transform/entrypoint'
